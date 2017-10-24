@@ -51,6 +51,9 @@ public class Bank {
      * @return boolean
      */
     public boolean depositMoney(final BankAccount bankAccount, final double amount) {
+        if (amount < 0) {
+            return false;
+        }
         bankAccount.setAccountBalance(bankAccount.getAccountBalance() + amount);
         return true;
     }
